@@ -47,7 +47,7 @@ public class Estoque {
         Produto produto = new Produto(novoId, nome, quantidade, preco);
         produtos.add(produto);
         salvarNoArquivo();
-        System.out.println("Produto adicionado com sucesso: " + produto);
+        System.out.println("Produto adicionado com sucesso");
     }
 
     private int gerarNovoId() {
