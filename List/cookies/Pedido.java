@@ -3,7 +3,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Pedido {
-    private List<PedidoCookie> cookies;
+    private ArrayList<PedidoCookie> cookies;
 
     public Pedido() {
         cookies = new ArrayList<>();
