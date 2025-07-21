@@ -23,46 +23,46 @@ public class Blog {
     }
 
     public Map<Categorias, Integer> obterContagemPorCategoria() {
-        Map<Categorias, Integer> contagem = new HashMap<>();
+        Map<Categorias, Integer> contagem = new TreeMap<>();
         for (Post postagem : postagens) {
-            Categorias cat = postagem.getCategoria();
-            contagem.put(cat, contagem.getOrDefault(cat, 0) + 1);
+            Categorias categoria = postagem.getCategoria();
+            contagem.put(categoria, contagem.getOrDefault(categoria, 0) + 1);
         }
         return contagem;
     }
 
     public Set<Post> obterPostsPorAutor(Autor autor) {
-        Set<Post> postsAutor = new TreeSet<>();
+        Set<Post> posts = new TreeSet<>();
         for (Post postagem : postagens) {
             if (postagem.getAutor().equals(autor)) {
-                postsAutor.add(postagem);
+                posts.add(postagem);
             }
         }
-        return postsAutor;
+        return posts;
     }
 
     public Set<Post> obterPostsPorCategoria(Categorias categoria) {
-        Set<Post> postsCategoria = new TreeSet<>();
+        Set<Post> posts = new TreeSet<>();
         for (Post postagem : postagens) {
             if (postagem.getCategoria() == categoria) {
-                postsCategoria.add(postagem);
+                posts.add(postagem);
             }
         }
-        return postsCategoria;
+        return posts;
     }
 
     public Map<Categorias, Set<Post>> obterTodosPostsPorCategorias() {
-        Map<Categorias, Set<Post>> mapa = new HashMap<>();
+        Map<Categorias, Set<Post>> mapa = new TreeMap<>();
         for (Post postagem : postagens) {
-            Categorias cat = postagem.getCategoria();
-            mapa.putIfAbsent(cat, new TreeSet<>());
-            mapa.get(cat).add(postagem);
+            Categorias categoria = postagem.getCategoria();
+            mapa.putIfAbsent(categoria, new TreeSet<>());
+            mapa.get(categoria).add(postagem);
         }
         return mapa;
     }
 
     public Map<Autor, Set<Post>> obterTodosPostsPorAutor() {
-        Map<Autor, Set<Post>> mapa = new HashMap<>();
+        Map<Autor, Set<Post>> mapa = new TreeMap<>();
         for (Post postagem : postagens) {
             Autor autor = postagem.getAutor();
             mapa.putIfAbsent(autor, new TreeSet<>());
