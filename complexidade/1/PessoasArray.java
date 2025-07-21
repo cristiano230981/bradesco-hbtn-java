@@ -3,12 +3,10 @@ public class PessoasArray {
     private String[] nomes;
 
     public PessoasArray() {
-        nomes = new String[]{
-                "Amanda", "Beatriz", "Carlos", "Daniela", "Eduardo",
-                "Fabio", "Gustavo", "Hingrid", "Isabela", "Joao", "Leise", "Maria",
-                "Norberto", "Otavio", "Paulo", "Quirino", "Renata", "Sabata",
-                "Tais", "Umberto", "Vanessa", "Xavier"
-        };
+        nomes =new String[]{"Amanda", "Beatriz", "Carlos","Daniela","Eduardo",
+                "Fabio","Gustavo", "Hingrid","Isabela","Joao","Leise","Maria",
+                "Norberto","Otavio","Paulo", "Quirino","Renata","Sabata",
+                "Tais","Umberto","Vanessa","Xavier"};
     }
 
     public String[] getNomes() {
@@ -21,9 +19,7 @@ public class PessoasArray {
 
     public void buscaLinear(String nome) {
         System.out.println("Procurando pelo nome: \"" + nome + "\"");
-
         boolean encontrado = false;
-
         for (int i = 0; i < nomes.length; i++) {
             System.out.println("Passando pelo indice:" + i);
             if (nomes[i] == nome) {
