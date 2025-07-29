@@ -19,6 +19,14 @@ public class Pessoa implements Comparable<Pessoa> {
         return cargo;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
     @Override
     public String toString() {
         return String.format(new Locale("pt", "BR"),"[%d] %s %s %d R$ %.6f", codigo, nome, cargo, idade, salario);
