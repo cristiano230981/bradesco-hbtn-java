@@ -32,7 +32,6 @@
     </dependencies>
 
     <build>
-        <sourceDirectory>/sourceDirectory>
         <plugins>
             <!-- Plugin de compilação -->
             <plugin>
